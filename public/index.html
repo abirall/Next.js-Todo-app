@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TWON — Todos & Names</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <header class="sticky top-0 z-10 bg-white/80 backdrop-blur border-b">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-2xl font-extrabold tracking-tight">TWON <span class="text-gray-400 font-semibold">· 3600</span></h1>
+      <a href="/health" target="_blank" class="text-sm text-gray-600 hover:text-black">Health</a>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Todo Card -->
+      <section class="bg-white rounded-2xl shadow p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold flex items-center gap-2"><i data-lucide="check-square"></i> Todo List</h2>
+          <button id="seedTodos" class="text-xs px-3 py-1 rounded-full border hover:bg-gray-50">Seed</button>
+        </div>
+        <form id="todoForm" class="flex gap-2 mb-4">
+          <input id="todoInput" class="flex-1 rounded-xl border px-3 py-2" placeholder="Add a new task..." />
+          <button class="px-4 py-2 rounded-xl bg-black text-white">Add</button>
+        </form>
+        <ul id="todoList" class="space-y-2"></ul>
+      </section>
+
+      <!-- Names Card -->
+      <section class="bg-white rounded-2xl shadow p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold flex items-center gap-2"><i data-lucide="users"></i> Name List</h2>
+          <button id="seedNames" class="text-xs px-3 py-1 rounded-full border hover:bg-gray-50">Seed</button>
+        </div>
+        <form id="nameForm" class="flex gap-2 mb-4">
+          <input id="nameInput" class="flex-1 rounded-xl border px-3 py-2" placeholder="Add a name..." />
+          <button class="px-4 py-2 rounded-xl bg-black text-white">Add</button>
+        </form>
+        <ul id="nameList" class="space-y-2"></ul>
+      </section>
+    </div>
+
+    <footer class="text-center text-sm text-gray-500">Built with Node.js, Express & MongoDB · Elegant by Tailwind</footer>
+  </main>
+
+  <script src="/app.js" type="module"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
