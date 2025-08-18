@@ -17,6 +17,8 @@ services:
       - .:/usr/src/app
     depends_on:
       - db
+    networks: 
+      - loki
 
   db:
     image: mongo:6.0
@@ -34,9 +36,17 @@ services:
       interval: 30s
       timeout: 5s
       retries: 10
+    networks: 
+      - loki
 
 volumes:
   mongodb_data:
+
+networks: 
+  loki:
+    driver: bridge
+
+
 
 
     
